@@ -30,4 +30,6 @@ var_dump($x === $y);
 ?>
 
 <!--== Checks only values while === checks value and data type-->
-
+<!--var_dump()-->
+<!--Used for debugging.-->
+<!--It shows data Type and values-->
