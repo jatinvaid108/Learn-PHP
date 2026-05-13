@@ -1,4 +1,16 @@
 <?php
+
+function student($name, $age){
+
+    echo $name . " is " . $age . " years old";
+
+}
+
+student("Jatin", 20);
+
+?>
+
+<?php
 function isArmstrong($num)
 {
     $ogNum = $num;
