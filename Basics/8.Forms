@@ -1,0 +1,92 @@
+=============================
+PHP FORMS HANDLING SHORT NOTES
+=============================
+
+1. Forms are used to collect user input.
+
+2. Form data is sent from browser to PHP.
+
+3. Basic form syntax:
+
+<form>
+</form>
+
+4. Important form attributes:
+
+   method
+   action
+
+5. method defines how data is sent.
+
+   GET  -> data visible in URL
+   POST -> data hidden from URL
+
+6. action defines where form data is sent.
+
+   Example:
+   <form action="process.php">
+
+7. Input fields must have name attribute.
+
+   Example:
+   <input type="text" name="username">
+
+8. PHP accesses form data using:
+
+   $_GET
+   $_POST
+
+9. Example:
+
+   $_POST["username"]
+
+10. isset() checks whether value exists.
+
+    Example:
+
+    if(isset($_POST["username"]))
+
+11. GET method:
+    - data visible in URL
+    - less secure
+    - used for search/filter
+
+12. POST method:
+    - data hidden
+    - more secure
+    - used for login/signup/forms
+
+13. Common form elements:
+
+    input
+    textarea
+    select
+    radio
+    checkbox
+
+14. Checkbox arrays use [].
+
+    Example:
+
+    name="skills[]"
+
+15. htmlspecialchars() protects from XSS attacks.
+
+    Example:
+
+    htmlspecialchars($_POST["username"])
+
+16. Superglobals used in forms:
+
+    $_GET
+    $_POST
+
+17. Form flow:
+
+    User fills form
+          ↓
+    Browser sends request
+          ↓
+    PHP receives data
+          ↓
+    PHP processes response

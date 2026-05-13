@@ -1,0 +1,115 @@
+PART 2 — SUPERGLOBALS
+
+VERY IMPORTANT TOPIC.
+
+Superglobals are special predefined variables in PHP.
+
+Accessible everywhere.
+
+Used heavily in:
+
+forms
+authentication
+sessions
+APIs
+Laravel
+Why Called Superglobals?
+
+Because:
+
+available everywhere
+no need for global keyword
+Common Superglobals
+Superglobal	Purpose
+$_GET	URL/form data
+$_POST	Form data
+$_SERVER	Server info
+$_SESSION	Session data
+$_COOKIE	Cookies
+$_FILES	Uploaded files
+
+We’ll deeply cover forms later.
+
+Today basics.
+
+1. $_GET
+
+Gets data from URL.
+
+Example URL
+test.php?name=Jatin&age=20
+
+PHP Code
+<?php
+
+echo $_GET["name"];
+echo $_GET["age"];
+
+?>
+
+Output:
+
+Jatin20
+
+Understanding
+URL Data
+?name=Jatin&age=20
+
+called:
+
+query parameters
+2. $_POST
+
+Used mainly with forms.
+
+More secure than GET.
+
+Example later in forms section.
+
+3. $_SERVER
+
+Contains server/environment info.
+
+Example
+<?php
+
+print_r($_SERVER);
+
+?>
+
+Shows lots of server details.
+
+Common Usage
+echo $_SERVER["PHP_SELF"];
+
+Current file name.
+
+Another Example
+echo $_SERVER["SERVER_NAME"];
+4. $_SESSION
+
+Stores user data across pages.
+
+Used in:
+
+login systems
+authentication
+
+Example later.
+
+5. $_COOKIE
+
+Stores small browser data.
+
+IMPORTANT THING
+
+Superglobals are ASSOCIATIVE ARRAYS.
+
+Example:
+
+$_GET["name"]
+
+Here:
+
+$_GET = associative array
+"name" = key
