@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\EventController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -29,4 +30,14 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/events', [EventController::class, 'index']);
     Route::put('/events/{id}', [EventController::class, 'update']);
     Route::delete('/events/{id}', [EventController::class, 'destroy']);
+});
+
+
+//Admin ROutes
+Route::middleware(['auth:sanctum', 'admin'])->prefix('admin')->group(function () {
+
+    Route::get('/events', [AdminController::class, 'allEvents']);
+
+    Route::delete('/events/{id}', [AdminController::class, 'deleteEvent']);
+
 });
